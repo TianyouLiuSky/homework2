@@ -8,7 +8,7 @@ public class AutoDestroy : MonoBehaviour
     public float delay;
     void Start()
     {
-        AutoDestroy(gameObject, delay);
+        Destroy(gameObject, delay);
     }
 
     // Update is called once per frame

@@ -8,9 +8,9 @@ public class PlayerShooting : MonoBehaviour
     public GameObject prefab;
     public GameObject shootingPoint;
 
-    void update() 
+    void Update() 
     {
-        if (Inpute.GetKeyDown(Key.Code.Mouse0)) 
+        if (Input.GetKeyDown(KeyCode.Mouse0)) 
         { 
             Instantiate(prefab, transform.position, transform.rotation);
         }
