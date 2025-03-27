@@ -19,6 +19,7 @@ public class EnemyFSM : MonoBehaviour
     public float fireRate;
 
     public Boolean isStopped;
+    public ParticleSystem  muzzleEffect;
 
     void Update()
     {
@@ -94,11 +95,12 @@ public class EnemyFSM : MonoBehaviour
     {
         var timeSinceLastShoot = Time.time - lastShootTime;
         if (timeSinceLastShoot > fireRate)
-        {
-            lastShootTime = Time.time;
-            Instantiate(bulletPrefab, 
-                transform.position, transform.rotation);
-        }
+        return; 
+
+        lastShootTime = Time.time;
+        Instantiate(bulletPrefab, 
+            transform.position, transform.rotation);
+        muzzleEffect.Play();
     }
 
     void LookTo(Vector3 targetPosition)
@@ -108,6 +110,8 @@ public class EnemyFSM : MonoBehaviour
         directionToPosition.y = 0;
         transform.parent.forward = directionToPosition;
     }
+
+
 
 
 
