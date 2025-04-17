@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class NavMeshAnimator : MonoBehaviour
 {
-    NavMeshAgent navMesh;
+    UnityEngine.AI.NavMeshAgent navMesh;
     Animator animator;
 
     void Awake()
     {
-        navMesh = GetComponent<NavMeshAgent>();
+        navMesh = GetComponent<UnityEngine.AI.NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
 
